@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Gerenciador de tarefas';
+  title = 'Gerenciador de tarefas';  //add title e add no template app.component.html
 }
