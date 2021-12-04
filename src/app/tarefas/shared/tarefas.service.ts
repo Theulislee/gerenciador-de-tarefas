@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Tarefa } from './';  //add Tarefa
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +7,10 @@ import { Injectable } from '@angular/core';
 export class TarefasService {
 
   constructor() { }
+
+  //primeiro metodo chamado listar, ele retorna todos os dados da tarefa.
+  listarTodos(): Tarefa [] {
+    const tarefas = localStorage['tarefas'];
+    return tarefas ? JSON.parse(tarefas) : [];
+  }
 }
