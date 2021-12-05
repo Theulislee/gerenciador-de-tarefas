@@ -34,6 +34,12 @@ export class TarefasService {
     return tarefas.find(tarefa => tarefa.id === id);
   }
 
+  //atualizar recebe tarefe. verifica se o id é o mesmo para substituir o objeto sendo atualizado.
+  //chamamos metodo listarTodos para obter a lista das tarefas.
+  //apartir das tarefas chamamos o forEach que verifica 3 paramentros: obj, index, objs.
+  //if vai verificar se o id da tarefa que estou atualizando é igual da que estou interando.
+  //utilizo objs que seria copiadas tarefas/ index seria a posicao 0 1 2 3 e atribuo a tarefa.
+  //localStorage['tarefas'] associaria minha lista de tarefas atualizadas
   atualizar(tarefa: Tarefa): void {
     const tarefas: Tarefa[] = this.listarTodos();
     tarefas.forEach((obj, index, objs) => {
