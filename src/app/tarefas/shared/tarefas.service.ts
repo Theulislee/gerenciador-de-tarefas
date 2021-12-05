@@ -25,4 +25,12 @@ export class TarefasService {
     tarefas.push(tarefa); //
     localStorage['tarefas'] = JSON.stringify(tarefas);
   }
+
+  //Ele recebe id do tipo number e irá retornar uma tarefa.
+  //Novamente chama o listarTodos para obter todas as tarefas
+  //find - metodo que fica dentro da lista js, e depedendo da condição retorna a tarefa correta.
+  buscarPorId(id: number): Tarefa {
+    const tarefas: Tarefa[] = this.listarTodos();
+    return tarefas.find(tarefa => tarefa.id === id);
+  }
 }
