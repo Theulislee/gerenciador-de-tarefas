@@ -60,6 +60,9 @@ export class TarefasService {
     localStorage['tarefas'] = JSON.stringify(tarefas);
   }
 
+  //metodo alterarStatus tambémm recebe o id e ele faz praticamente o mesmo que metodo atualizar, porem atualizo apenas o concluido
+  //objs que é a minha lista de tarefas na posicao que quero atualizar
+  //concluido - com tipo booleano,o jeito facil de invertero booleano é usando operador ! no obj.concluida
   alterarStatus(id:number): void {
     const tarefas:Tarefa[] = this.listarTodos();
     tarefas.forEach((obj, index, objs) => {
