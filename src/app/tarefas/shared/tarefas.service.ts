@@ -50,6 +50,10 @@ export class TarefasService {
     localStorage['tarefas'] = JSON.stringify(tarefas);
   }
 
+  //Para remover pego o this.listar e usarei o filter para isso
+  //o filter ele retorna todas as tarefas só que filtra de acordo com uma condição que passei
+  //condição seria que ele filtre e me retorne todas as tarefas no id que seja diferente do id que quero remover
+  //atribuo uma nova listagem de tarefa ao meu localStorage, e usando JSON>stringify para converter esse objeto.
   remover(id:number): void {
     let tarefas: Tarefa[] = this.listarTodos();
     tarefas = tarefas.filter(tarefa => tarefa.id !==id);
