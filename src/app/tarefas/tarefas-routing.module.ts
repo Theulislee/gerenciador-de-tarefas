@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 
 import { ListarTarefaComponent } from './listar';
 
+
 export const TarefaRoutes: Routes =[
 
   { //atalho para tarefas/listar, e em seguida irá redirecionar para tarefas/listar
