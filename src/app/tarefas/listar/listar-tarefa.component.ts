@@ -1,6 +1,6 @@
 import { TarefasService } from './../shared/tarefas.service';
 import { Component, OnInit } from '@angular/core';
-import { Tarefa } from '..';
+import { Tarefa } from '..'; //importe de Tarefa add
 
 @Component({
   selector: 'app-listar-tarefa',
@@ -8,7 +8,7 @@ import { Tarefa } from '..';
   styleUrls: ['./listar-tarefa.component.css']
 })
 export class ListarTarefaComponent implements OnInit {
-
+// tarefas do tipo array de Tarefa
   tarefas: Tarefa[];
 
   constructor(private TarefasService: TarefasService) { }
