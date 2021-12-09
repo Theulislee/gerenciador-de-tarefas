@@ -13,9 +13,11 @@ export class ListarTarefaComponent implements OnInit {
 
   constructor(private TarefasService: TarefasService) { }
 
+// Associando o listarTodos para as tarefas atribuido dentro da class ListarTarefa...
   ngOnInit(): void {
+    this.tarefas = this.listarTodos();
   }
-
+  //add metodo que irá retornar uma lista de tarefas do que procura em tarefas do tipo array de Tarefa
   listarTodos(): Tarefa[] {
     return this.TarefasService.listarTodos();
   }
