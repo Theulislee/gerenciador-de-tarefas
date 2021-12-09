@@ -16,10 +16,7 @@ export class ListarTarefaComponent implements OnInit {
 // Associando o listarTodos para as tarefas atribuido dentro da class ListarTarefa...
   ngOnInit(): void {
     this.tarefas = this.listarTodos();
-    this.tarefas = [ // add duas tarefas apenas para consegui vizualizar interface.
-      new Tarefa(1, "Tarefa 1", false),
-      new Tarefa(2, "Tarefa 2", true) 
-    ];
+
   }
   //add metodo que irá retornar uma lista de tarefas do que procura em tarefas do tipo array de Tarefa
   listarTodos(): Tarefa[] {
