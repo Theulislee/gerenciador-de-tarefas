@@ -9,6 +9,7 @@ export class TarefasService {
   constructor() { }
 
   //primeiro metodo chamado listar, ele retorna todos os dados da tarefa.
+  // ? / : são operador ternário que é forma simplificada de if e else em uma linha só
   listarTodos(): Tarefa [] {
     const tarefas = localStorage['tarefas'];
     return tarefas ? JSON.parse(tarefas) : [];
@@ -19,6 +20,7 @@ export class TarefasService {
 //getTime usado para facilitar a vida //tarefa id criada para passamos id no construtor da classe tarefa
 //tarefas.push... estamos passando a tarefa para o ultimo
 //localStorage['tarefas']... convertendo a tarefa atravé do utilitário stringify
+//metodo JSON.stringify converte os valores js para uma string String JSON
   cadastrar(tarefa:Tarefa): void {
     const tarefas = this.listarTodos();
     tarefa.id = new Date().getTime();
@@ -29,6 +31,7 @@ export class TarefasService {
   //Ele recebe id do tipo number e irá retornar uma tarefa.
   //Novamente chama o listarTodos para obter todas as tarefas
   //find - metodo que fica dentro da lista js, e depedendo da condição retorna a tarefa correta.
+  //o Find ele retorna apenas o primeiro elemento do array apartir da condição criada.
   buscarPorId(id: number): Tarefa {
     const tarefas: Tarefa[] = this.listarTodos();
     return tarefas.find(tarefa => tarefa.id === id);
