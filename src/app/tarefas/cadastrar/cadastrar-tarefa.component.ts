@@ -18,10 +18,12 @@ export class CadastrarTarefaComponent implements OnInit {
   tarefa: Tarefa //add para associar campo de texto da interface html
 
   constructor(
-    private router:Router //add para o angular injentar o serviço
+    private tarefasservice: TarefasService, //add metodo TarefasService
+    private router: Router //add para o angular injentar o serviço
   ) { }
 
   ngOnInit(): void {
+    this.tarefa = new Tarefa(); //add instancia tarefa para fazer associação com interface
   }
 
 }
