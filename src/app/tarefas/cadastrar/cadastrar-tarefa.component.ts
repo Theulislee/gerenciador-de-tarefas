@@ -26,4 +26,14 @@ export class CadastrarTarefaComponent implements OnInit {
     this.tarefa = new Tarefa(); //add instancia tarefa para fazer associação com interface
   }
 
+  //if(...) ele vai irá retornar o true ou false, se conter algum erro ele não irá fazer o cadastro
+  //this.tarefasservice.cadastrar irá passar o metodo e chama o método this.tarefa
+  //this.router.navigate irá voltar para tela de listagem de tarefa.e no fim irá voltar a tela "/tarefas"
+  cadastrar(): void {
+    if(this.formTarefa.form.valid) {
+      this.tarefasservice.cadastrar(this.tarefa);
+      this.router.navigate(["/tarefas"]);
+    }
+  }
+
 }
