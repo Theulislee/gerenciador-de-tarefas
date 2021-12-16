@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { TarefasService } from './../shared/tarefas.service';
+import { Component, OnInit, ViewChild } from '@angular/core'; //ViewChild adicionado
+import { NgForm } from '@angular/forms'; //add import para @viewChild metodo
+import { Tarefa } from '..'; //add import para Tarefa metodo
+import { ActivatedRoute, Router } from '@angular/router'; //add ActivatedRoute and Router metodo
 
 @Component({
   selector: 'app-editar-tarefa',
@@ -7,7 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarTarefaComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('formTarefa') formTarefa: NgForm; //add método ViewChild
+  tarefa: Tarefa;
+
+  constructor(
+    private tarefaService: TarefasService,
+    private route: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit(): void {
   }
