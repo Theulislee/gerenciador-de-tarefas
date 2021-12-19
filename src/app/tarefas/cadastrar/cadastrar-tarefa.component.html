@@ -5,22 +5,23 @@
     <div class="form-group">
       <label for="nome">Tarefa:</label>
 
-     <!--  operador sustenido, #formTarefa- disponibiliza uma variavel na bio.
+      <!--  operador sustenido, #formTarefa- disponibiliza uma variavel na bio.
       utilizamos o sustenido para utilizar o botão cadastrar -->
       <input
         type="text"
         class="form-control"
         id="nome"
         name="nome"
-       [(ngModel)]="tarefa.nome"
+        [(ngModel)]="tarefa.nome"
         #nome="ngModel"
         minlength="5"
-        required>
-      <div *ngIf="nome.errors && (nome.dirty || nome.touched)"
-           class="alert alert-danger">
-        <div [hidden]="!nome.errors.required">
-          Digite a tarefa.
-        </div>
+        required
+      />
+      <div
+        *ngIf="nome.errors && (nome.dirty || nome.touched)"
+        class="alert alert-danger"
+      >
+        <div [hidden]="!nome.errors.required">Digite a tarefa.</div>
         <div [hidden]="!nome.errors.minlength">
           A tarefa deve conter ao menos 5 caracteres.
         </div>
@@ -32,11 +33,14 @@
         class="btn btn-success"
         (click)="cadastrar()"
         value="Cadastrar"
-        [disabled]="!formTarefa.form.valid">
-      <a [routerLink]="['/tarefas']"
-        class="btn btn-default">
-        <span class="glyphicon glyphicon-chevron-left"
-          aria-hidden="true"></span> Voltar
+        [disabled]="!formTarefa.form.valid"
+      />
+      <a [routerLink]="['/tarefas']" class="btn btn-default">
+        <span
+          class="glyphicon glyphicon-chevron-left"
+          aria-hidden="true"
+        ></span>
+        Voltar
       </a>
     </div>
   </form>
