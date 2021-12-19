@@ -23,6 +23,11 @@ export class ListarTarefaComponent implements OnInit {
     return this.TarefasService.listarTodos();
   }
 
+  /*
+  Acao de remover que recebe $event: any; e recebe tarefa:Tarefa.
+  O $event: any é um objeto padrão do angular que apresenta envento mesmo do navegador.
+  $event.preventDefault(); irá fazer nada ao clicar o botão(estou desativando opção atualizar página)
+*/
   remover($event: any, tarefa: Tarefa): void {
     $event.preventDefault();
     if (confirm('Deseja remover a tarefa "' + tarefa.nome + '"?')) {
