@@ -1,22 +1,29 @@
 <h1>Tarefas</h1>
-<!-- titulo da tarefa -->
+<!--
+  titulo da tarefa
+-->
 
-<!-- tabela principal onde tem os header que é a Tarefa concluída -->
+<!--
+   tabela principal onde tem os header que é a Tarefa concluída
+  -->
 <table class="table table-striped table-bordered table-hover">
   <tr>
     <th>Tarefa</th>
     <th>Concluída</th>
 
-    <!--  Acao do botão novo: Quando clicar irá direcionar para outra tela.
+    <!--
+      Acao do botão novo: Quando clicar irá direcionar para outra tela.
     -routerLink diretiva do angular que está no pacote routerModule.
-    -tambem e uma atribuicao. Ele fala para direcionar o nosso caso para '/tarefas/cadastrar' -->
+    -tambem e uma atribuicao. Ele fala para direcionar o nosso caso para '/tarefas/cadastrar'
+  -->
     <th class="text-center">
       <a [routerLink]="['/tarefas/cadastrar']" class="btn btn-xs btn-success">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo
       </a>
     </th>
   </tr>
-  <!-- COMENTARIO: *ngFor é a primeira diretiva do pacote do Angular/forma.model -->
+  <!--
+    COMENTARIO: *ngFor é a primeira diretiva do pacote do Angular/forma.model -->
   <!-- COMENTARIO: let tarefa of tarefas é aquele tarefas: Tarefas[] em lista-Tarefa.component.ts -->
   <!-- COMENTARIO: alterarStatus irá utilizar apenas o checkedbok -->
   <tr *ngFor="let tarefa of tarefas">
