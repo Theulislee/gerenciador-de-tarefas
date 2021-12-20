@@ -18,20 +18,22 @@
   </tr>
   <!-- COMENTARIO: *ngFor é a primeira diretiva do pacote do Angular/forma.model -->
   <!-- COMENTARIO: let tarefa of tarefas é aquele tarefas: Tarefas[] em lista-Tarefa.component.ts -->
-
+  <!-- COMENTARIO: alterarStatus irá utilizar apenas o checkedbok -->
   <tr *ngFor="let tarefa of tarefas">
-    <!--  <td
+    <!-- <td
       [tarefaConcluida]="tarefa.concluida"
-      [class.success]="!tarefa.concluida">
+      [class.success]="!tarefa.concluida"
+    >
       {{ tarefa.nome }}
     </td>
-     <td style="width: 70px" class="text-center">
+    <td style="width: 70px" class="text-center">
       <input
         type="checkbox"
         [value]="tarefa.id"
         [checked]="tarefa.concluida"
-        (click)="alterarStatus(tarefa)">
-    </td> -->
+        (click)="alterarStatus(tarefa)"
+      />
+    </td>  -->
     <td class="text-center" style="width: 200px">
       <a
         [routerLink]="['/tarefas/editar', tarefa.id]"
@@ -55,7 +57,7 @@
         class="btn btn-xs btn-danger"
         (click)="remover($event, tarefa)"
       >
-      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
         Remover
       </a>
     </td>

@@ -35,7 +35,10 @@ export class ListarTarefaComponent implements OnInit {
       this.tarefas = this.listarTodos();
     }
   }
-
+/*
+Parecido com metodo remover, com diferença que aqui colocamos checkedbox e não link, então não tem
+necessidade de adiciona o $event para dar preventDefault().
+*/
   alterarStatus(tarefa: Tarefa): void {
     if (confirm('Deseja alterar o status da tarefa "' + tarefa.nome + '"?')) {
       this.TarefasService.alterarStatus(tarefa.id);
