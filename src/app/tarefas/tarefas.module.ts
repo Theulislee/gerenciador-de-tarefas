@@ -13,7 +13,8 @@ import { TarefaConcluidaDirective } from './shared/tarefa-concluida.directive'; 
   declarations: [
     ListarTarefaComponent, //add listar
     CadastrarTarefaComponent, //add cadastrar
-    EditarTarefaComponent, TarefaConcluidaDirective //add editar
+    EditarTarefaComponent, //add editar
+    TarefaConcluidaDirective //add Dirctive automaticamente
   ],
   imports: [
     CommonModule,
