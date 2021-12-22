@@ -1,10 +1,16 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appTarefaConcluida]'
+  selector: '[tarefaConcluida]' //Alterado para forma mais curta
 })
 export class TarefaConcluidaDirective {
 
-  constructor() { }
+  //add Input para entrada de dado, para passar ao Html.
+
+  @Input() tarefaConcluida: Boolean;
+
+  //add private el: ElementRef, que é uma referencia Html que add.
+  constructor(private el: ElementRef) {
+  }
 
 }
