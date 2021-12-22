@@ -27,7 +27,7 @@
   <!-- COMENTARIO: let tarefa of tarefas é aquele tarefas: Tarefas[] em lista-Tarefa.component.ts -->
   <!-- COMENTARIO: alterarStatus irá utilizar apenas o checkedbok -->
   <tr *ngFor="let tarefa of tarefas">
-    <!-- <td
+     <td
       [tarefaConcluida]="tarefa.concluida"
       [class.success]="!tarefa.concluida"
     >
@@ -40,7 +40,7 @@
         [checked]="tarefa.concluida"
         (click)="alterarStatus(tarefa)"
       />
-    </td>  -->
+    </td>
     <td class="text-center" style="width: 200px">
       <a
         [routerLink]="['/tarefas/editar', tarefa.id]"
